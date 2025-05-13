@@ -16,7 +16,7 @@ fi
 
 function build() {
 	echo "Build docker image with version \"${VER}\""
-	docker build --no-cache -t ${IMAGE}:${VER} -f Appium/Dockerfile Appium
+	docker build --platform=linux/amd64,linux/arm64 --no-cache -t ${IMAGE}:${VER} -f Appium/Dockerfile Appium
 	docker images
 }
 
